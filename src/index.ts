@@ -1,6 +1,9 @@
 import express, { Request, Response } from "express"
 
-import { info, start, move, end } from "./logic";
+import info from "./controllers/info"
+import end from "./controllers/end"
+import start from "./controllers/start"
+import move from "./controllers/move"
 
 const app = express()
 app.use(express.json())

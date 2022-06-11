@@ -1,5 +1,3 @@
-// See https://docs.battlesnake.com/references/api for all details and examples.
-
 export interface InfoResponse {
     apiversion: string;
     author?: string;
@@ -89,4 +87,27 @@ export interface GameState {
     turn: number;
     board: Board;
     you: Battlesnake;
+}
+
+// create the grid
+interface Cell {
+  value: number
+  type: string
+  strength?: number // to hold snake total length, kinda gross imple.
+}
+interface IGameGridRow extends Array<Cell> { }
+interface IGameGrid extends Array<IGameGridRow> { }
+interface IPossibleMoves {
+  [key: string]: boolean
+}
+
+interface IMoveTree extends Array<IMoveBranch> {}
+
+interface IMoveBranch {
+  x: number 
+  y: number
+  depth: number
+  direction: string
+  parentBranch?: IMoveBranch
+  moveBranches: IMoveBranch[]
 }

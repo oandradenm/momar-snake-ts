@@ -1,0 +1,8 @@
+export const EMPTY_CELL = "E"
+export const HEAD_CELL = "H"
+export const BODY_CELL = "B"
+export const FOOD_CELL = "F"
+export const YOU_HEAD_CELL = "Y"
+export const TAIL_CELL = "T"
+export const WALL_CELL = "W"
+export const HAZARD_CELL = "H"
