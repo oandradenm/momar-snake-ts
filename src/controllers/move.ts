@@ -2,21 +2,15 @@ import { GameState, MoveResponse, IPossibleMoves } from "../types"
 
 import { paintTheGrid } from '..//logic/prepare'
 import { 
-  evaluateLookAheadCollision, 
-  evaluateLookAheadDeadEnd,
-  evaluateForSelf, 
-  evaluateForOtherSnakes,
-  evaluateForWalls,
-  evaluateForNeck,
   evaluateLookAhead
 } from '..//logic/evaluate'
-import { decideMove, decideRankedMove } from '..//logic/decide'
+import { decideRankedMove } from '..//logic/decide'
 
 export default function move(gameState: GameState): MoveResponse {
   console.log(`${gameState.game.id} MOVE`)
 
   let grid = paintTheGrid(gameState)
-  let lookAheadDepth = 1
+  let lookAheadDepth = 3
 
   // let possibleMoves: IPossibleMoves = {
   //   up: true,
