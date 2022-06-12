@@ -17,7 +17,7 @@ export function decideMove(
     coord: Coord;
     directionsToFood: string[];
   }[] = [];
-  if (gameState.you.length < 15 || gameState.you.health < 33) {
+  if (gameState.you.length < 5 || gameState.you.health < 33) {
     evaluatedFood.push(...evaluateFood(gameState, grid, 100));
   }
 
@@ -69,7 +69,7 @@ export function decideRankedMove(
 
   let foodDirection = null;
 
-  if (gameState.you.length < 15 || gameState.you.health < 33) {
+  if (gameState.you.length < 5 || gameState.you.health < 33) {
     const evaluatedFood: {
       totalDistance: number;
       coord: Coord;

@@ -32,6 +32,9 @@ function paintSnakes(gameState: GameState, grid: IGameGrid) {
       grid[part.x][part.y].value = 0
       grid[part.x][part.y].type = YOU_HEAD_CELL
       return
+    } else if ((gameState.you.length - 1) === index) {
+      grid[part.x][part.y].value = 0
+      grid[part.x][part.y].type = TAIL_CELL
     }
     grid[part.x][part.y].value = 0
     grid[part.x][part.y].type = BODY_CELL
