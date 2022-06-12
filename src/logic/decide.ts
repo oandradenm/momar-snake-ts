@@ -65,11 +65,13 @@ export function decideRankedMove(
   rankedMoves: { direction: string; length: number }[],
   grid: IGameGrid
 ) {
-  const FOOD_RANK_VALUE_THRESHOLD = 3;
+  const FOOD_RANK_VALUE_THRESHOLD = 4;
+  const LENGTH_THRESHOLD = 10
+  const HEALTH_THRESHOLD = 33
 
   let foodDirection = null;
 
-  if (gameState.you.length < 5 || gameState.you.health < 33) {
+  if (gameState.you.length < LENGTH_THRESHOLD || gameState.you.health < HEALTH_THRESHOLD) {
     const evaluatedFood: {
       totalDistance: number;
       coord: Coord;
